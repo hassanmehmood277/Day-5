@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Day 5 RegExp Activity</title>
+  </head>
+  <body>
+    <h1>Day 5 RegExp</h1>
+    <script>
+      // A regular expression is a pattern of characters.
+      // The pattern is used to do pattern-matching "search-and-replace" functions on text.
+      // In JavaScript, a RegExp Object is a pattern with Properties and Methods.
+
+      //Modifiers are of three types:
+      //1: g: global modifier specifies a global match. A global match finds all matches (compared to only the first).
+
+      //2: i: i modifier used for case-insensitive match
+
+      //3: m: m modifier specifies a multiline match
+      // It only affects the behavior of start ^ and end $.
+      // ^ specifies a match at the start of a string.
+      // $ specifies a match at the end of a string.
+      // With the "m" set, ^ and $ also match at the beginning and end of each line.
+
+      //Brackets:  Brackets are used to find a range of characters
+      let vab = "Hello Javascript";
+      let demo = "123456789";
+      let x = /[h]/i;
+      let y = /[^l]/g;
+      let z = /[123789]/g;
+      document.write(vab.match(x) + "<br>");
+      document.write(vab.match(y) + "<br>");
+      document.write(demo.match(z) + "<br>");
+
+      //   The global property specifies whether or not the "g" modifier is set.
+      // This property returns true if the "g" modifier is set, otherwise it returns false.
+      let index = /"Hello global property"/g;
+      let gbl = index.global;
+      document.write(gbl + "<br>");
+
+      //   The ignoreCase property specifies whether or not the "i" modifier is set.
+      // This property returns true if the "i" modifier is set, otherwise it returns false.
+
+      let ign = /"Hello IgnoreCase Property"/i;
+      let check = ign.ignoreCase;
+      document.write(check + "<br>");
+
+      //   The multiline property specifies whether or not the m modifier is set.
+      //   This property returns true if the "m" modifier is set, otherwise it returns false.
+
+      //   The test() method returns true if it finds a match, otherwise false
+      let test = "Testing test function";
+      let pat = /S/i;
+      document.write(pat.test(test) + "<br>");
+
+      //   The exec() method tests for a match in a string.
+      // If it finds a match, it returns a result array, otherwise it returns null.
+      // test() and exec() perform similarly but test() returns boolean and exec() returns the result of matching variable.
+
+      //   The source property returns the text of a RegExp pattern:
+      let src = /ok/;
+      let chk = src.source;
+      document.write(chk + "<br>");
+
+      //   Metacharacters are characters with a special meaning:
+      let vbl = "Hello Metacharacters ...!!!";
+      let mat = /\W/g;
+      document.write(vbl.match(mat) + "<br>");
+    </script>
+  </body>
+</html>
